@@ -1,0 +1,21 @@
+// views/addGenre.pug
+
+extends layout
+
+block content
+  .row
+    .col-md-12
+      h1 Add Book
+      form(method="POST", action="/genres/add")
+        .form-group
+          label.col-lg-2.control.label Name
+          .col-lg-10
+            input.form-control(type="text", name='name')
+        .form-group
+          .col-lg-10.col-lg-offset-2
+            input.button.btn.btn-primary(type='submit', value='Submit')
+
+      if errors
+        ul
+          for error in errors
+            li!= error.msg

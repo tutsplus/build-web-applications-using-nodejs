@@ -1,0 +1,11 @@
+// views/books.pug
+
+extends layout
+
+block content
+  h1 Books
+  ul.well.well-lg
+    each book, i in books
+      li.well.well-sm
+        a(href=`/books/show/${book.id}`) #{book.name}
+        p= book.description
